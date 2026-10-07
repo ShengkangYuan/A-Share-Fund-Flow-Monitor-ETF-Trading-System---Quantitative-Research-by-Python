@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+data/session_state.pkl
+data/scheduler.pid
+*.log
+*.bat
+*.gif
+*.mp4
+*.xlsx
+*.csv
+*.png
+.git/
+.streamlit/
+_diagnose_fetcher.py
+_smoke_test.py

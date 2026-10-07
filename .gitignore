@@ -1,0 +1,50 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+ENV/
+.ipynb_checkpoints/
+
+# ===== OS / IDE =====
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+
+# ===== Logs =====
+*.log
+
+# ===== App runtime data (auto-generated on first run) =====
+fundflow_system/data/
+fundflow_system/signals/
+fundflow_system/*.csv
+fundflow_system/test_20_out.txt
+fundflow_system/test_report_20rounds.json
+
+# ===== Secrets =====
+**/.streamlit/secrets.toml
+
+# ===== Large build artifacts =====
+*.tar.gz
+
+# ===== Local temp / scratch files =====
+_repro_*
+smoke_clean.py
+pip_install.log
+
+# ===== Early one-off experiments at repo root (not part of the app) =====
+/eastmoney_crawler.py
+/json_to_excel.py
+/ma_strategy_backtest.py
+/eastmoney_data_2.json
+/东方财富行业资金流向.xlsx
+/000001_ma_strategy_backtest.png

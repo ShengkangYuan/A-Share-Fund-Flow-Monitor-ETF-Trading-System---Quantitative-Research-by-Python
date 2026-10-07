@@ -1,0 +1,6 @@
+[browser]
+gatherUsageStats = false
+
+# 本地运行时自动打开浏览器；Docker/云端通过环境变量 STREAMLIT_SERVER_HEADLESS=true 覆盖
+[server]
+headless = false

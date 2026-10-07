@@ -1,0 +1,34 @@
+services:
+  web:
+    build: .
+    container_name: fundflow-web
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+      - ./signals:/app/signals
+    environment:
+      - TZ=Asia/Shanghai
+      - SCHEDULER_MODE=embedded
+    restart: unless-stopped
+    command: streamlit run dashboard.py --server.port=8501 --server.address=0.0.0.0 --browser.gatherUsageStats=false
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8501/_stcore/health')"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  scheduler:
+    build: .
+    container_name: fundflow-scheduler
+    volumes:
+      - ./data:/app/data
+      - ./signals:/app/signals
+    environment:
+      - TZ=Asia/Shanghai
+      - SCHEDULER_MODE=standalone
+    restart: unless-stopped
+    command: python scheduler_runner.py
+    depends_on:
+      - web

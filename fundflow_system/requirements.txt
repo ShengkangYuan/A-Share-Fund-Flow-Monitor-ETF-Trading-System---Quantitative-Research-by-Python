@@ -1,0 +1,23 @@
+# A股资金流监测与ETF交易系统 - Python 依赖
+# 测试环境：Python 3.11 / 3.13，Windows 11 与 macOS/Linux 均可
+
+# Web 看板（st.fragment 自动刷新需要 1.37+）
+streamlit>=1.40,<2
+
+# 数据源
+akshare>=1.14
+requests>=2.31
+curl_cffi>=0.7          # 模拟浏览器 TLS 指纹，提升东方财富接口连通率（缺失时自动降级）
+
+# 数据处理
+pandas>=2.0
+numpy>=1.24
+
+# 图表与动态视频
+plotly>=5.18
+matplotlib>=3.7
+Pillow>=10.0            # matplotlib 的 PillowWriter 生成 GIF 时需要
+
+# 调度与系统监控
+schedule>=1.2
+psutil>=5.9
